@@ -30,9 +30,9 @@ def test_successful_login(sumple_user):
  # не успешная автоизация:
 
 def  test_unsuccessful_login(sumple_user):
-    user.get(LOGIN_URL)
-    user.find_element(By.ID, "username").send_keys("prosto1")
-    user.find_element(By.ID, "password").send_keys("nepassword")
-    user.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
+    sumple_user.get(LOGIN_URL)
+    sumple_user.find_element(By.ID, "username").send_keys("prosto1")
+    sumple_user.find_element(By.ID, "password").send_keys("nepassword")
+    sumple_user.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     error_message = user.find_element(By.CSS_SELECTOR, ".flash.error")
     assert "This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages." in error_message.text
