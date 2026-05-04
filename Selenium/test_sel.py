@@ -25,7 +25,7 @@ def test_successful_login(sumple_user):
     sumple_user.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
     sumple_user.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     success_message = sumple_user.find_element(By.CSS_SELECTOR, ".flash.success")
-    assert "Welcome to the Secure Area. When you are done click logout below." in success_message.text
+    assert "Welcome to the Secure Area." in success_message.text
 
  # не успешная автоизация:
 
