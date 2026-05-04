@@ -35,4 +35,4 @@ def  test_unsuccessful_login(sumple_user):
     sumple_user.find_element(By.ID, "password").send_keys("nepassword")
     sumple_user.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     error_message = sumple_user.find_element(By.CSS_SELECTOR, ".flash.error")
-    assert "This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages." in error_message.text
+    assert "Your username is invalid!\n×" in error_message.text
